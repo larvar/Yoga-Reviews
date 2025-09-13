@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Muted background */
+html, body {
+  @apply bg-[#f5f6f8] text-gray-900;
+}
+
+/* Optional: subtle dotted texture */
+.bg-dots {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.04) 1px, transparent 0);
+  background-size: 18px 18px;
+}
+
+.card {
+  @apply border rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow;
+}
+
+.badge {
+  @apply text-xs px-2 py-0.5 rounded-full bg-gray-100 border text-gray-700;
+}
