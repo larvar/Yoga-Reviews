@@ -1,19 +1,13 @@
 "use client";
-import { createContext, useContext, useState } from "react";
 
-const ToastCtx = createContext<(msg: string) => void>(() => {});
-export function useToast(){ return useContext(ToastCtx); }
+import { Toaster } from "react-hot-toast";
+import React from "react";
 
-export function ToastProvider({ children }: { children: React.ReactNode }) {
-  const [msg, setMsg] = useState<string | null>(null);
+export default function ToastProvider({ children }: { children?: React.ReactNode }) {
   return (
-    <ToastCtx.Provider value={(m)=>{ setMsg(m); setTimeout(()=>setMsg(null), 2200); }}>
+    <>
+      <Toaster position="top-right" reverseOrder={false} />
       {children}
-      {msg && (
-        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 bg-black text-white px-4 py-2 rounded shadow-lg">
-          {msg}
-        </div>
-      )}
-    </ToastCtx.Provider>
+    </>
   );
 }

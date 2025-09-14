@@ -1,5 +1,8 @@
 import "./globals.css";
-import { ToastProvider } from "@/components/ToastProvider";
+import { Inter } from "next/font/google";
+import ToastProvider from "../components/ToastProvider";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Yoga Reviews",
