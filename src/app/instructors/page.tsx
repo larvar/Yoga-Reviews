@@ -1,4 +1,5 @@
 import { supabase } from "../../lib/supabaseClient";
+import ClientInstructors from "./ClientInstructors";
 
 type Row = {
   instructor: string | null;

@@ -28,7 +28,6 @@ export default function ClientInstructors({
       .filter((i) => (q ? i.name.toLowerCase().includes(q) : true))
       .filter((i) => (club ? i.locs.includes(club) : true))
       .sort((a, b) => {
-        // Sort by relevance: count desc, avg desc, then name
         const byCount = b.count - a.count;
         if (byCount !== 0) return byCount;
         const byAvg = (b.avg ?? 0) - (a.avg ?? 0);
@@ -69,7 +68,6 @@ export default function ClientInstructors({
           </div>
         </div>
 
-        {/* Little stats row */}
         <div className="mt-3 text-sm text-gray-600">
           Showing <b>{filtered.length}</b> instructor{filtered.length === 1 ? "" : "s"}
           {club ? <> in <b>{club}</b></> : null}
@@ -90,7 +88,7 @@ export default function ClientInstructors({
             >
               <div className="flex items-center gap-3">
                 <Image
-                  src={i.photo}
+                  src={i.photo || "/placeholder-avatar.png"}
                   alt={i.name}
                   width={48}
                   height={48}
