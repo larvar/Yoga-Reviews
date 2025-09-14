@@ -1,4 +1,3 @@
-import { supabase } from "@/lib/supabaseClient";
 import { supabase } from "../../lib/supabaseClient";
 
 type Row = {
