@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "../../../lib/supabaseClient";
 import Link from "next/link";
 import Image from "next/image";
 import ClientInstructor from "./ClientInstructor";

@@ -1,5 +1,5 @@
 import { supabase } from "@/lib/supabaseClient";
-import ClientInstructors from "./ClientInstructors";
+import { supabase } from "../../lib/supabaseClient";
 
 type Row = {
   instructor: string | null;
